@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import { CardList } from "./components/cards-list/card-list.component.jsx";
 
 export default class App extends Component {
     constructor() {
         super();
 
         this.state = {
-            monsters: []
+            monsters: [],
         };
     }
 
@@ -18,9 +19,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                {this.state.monsters.map((monster) => (
-                    <h1 key={monster.id}> {monster.name} </h1>
-                ))}
+                <CardList monsters={this.state.monsters} />
             </div>
         );
     }
